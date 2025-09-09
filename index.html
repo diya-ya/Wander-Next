@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderNext</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="brand" data-link href="#/">
+                <span class="logo">🧭</span>
+                <span class="title">WanderNext</span>
+            </div>
+            <nav class="nav">
+                <!-- Navigation moved to auth area -->
+            </nav>
+            <div class="auth-area" id="authArea"></div>
+        </header>
+
+        <main id="view"></main>
+
+        <footer class="app-footer">
+            <div>© <span id="year"></span> WanderNext · Plan smarter, travel better.</div>
+        </footer>
+    </div>
+
+    <template id="tpl-toast">
+        <div class="toast"></div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
