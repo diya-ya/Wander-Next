@@ -67,6 +67,63 @@ function seedData() {
             description: 'Iconic supertree grove with light shows and skywalks.',
             address: '18 Marina Gardens Dr', contact: '+65 0000 0000', map: 'https://maps.google.com'
         },
+        // --- Extra demo items from popular cities ---
+        {
+            id: 'lst_4', type: 'accommodation', name: 'Paris Central Hotel', price: 150, rating: 4.6,
+            location: 'Paris, France', travelerTypes: ['couple','solo'],
+            images: ['https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Chic rooms near the Eiffel Tower.',
+            address: '14 Rue de Paris', contact: '+33 1 2345 6789', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_5', type: 'cafe', name: 'Tokyo Brew House', price: 10, rating: 4.4,
+            location: 'Tokyo, Japan', travelerTypes: ['solo','couple'],
+            images: ['https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Trendy specialty coffee and matcha cafe.',
+            address: 'Shibuya, Tokyo', contact: '+81 3 1234 5678', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_6', type: 'attraction', name: 'Sydney Opera House', price: 35, rating: 4.8,
+            location: 'Sydney, Australia', travelerTypes: ['family','couple', 'solo'],
+            images: ['https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop'],
+            description: 'World-famous music and arts venue.',
+            address: 'Bennelong Point, Sydney', contact: '+61 2 9250 7111', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_7', type: 'accommodation', name: 'New York Loft Stay', price: 180, rating: 4.2,
+            location: 'New York, USA', travelerTypes: ['solo','family'],
+            images: ['https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Modern loft apartments in Manhattan.',
+            address: '5th Avenue, NY', contact: '+1 212 555 6789', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_8', type: 'cafe', name: 'Bali Beach Cafe', price: 6, rating: 4.7,
+            location: 'Bali, Indonesia', travelerTypes: ['couple','solo','family'],
+            images: ['https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Beachfront coffee and smoothie bowls.',
+            address: 'Kuta, Bali', contact: '+62 361 123456', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_9', type: 'attraction', name: 'Colosseum Tour', price: 28, rating: 4.9,
+            location: 'Rome, Italy', travelerTypes: ['family','couple'],
+            images: ['https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Guided tours of the ancient Roman Colosseum.',
+            address: 'Piazza del Colosseo', contact: '+39 06 3996 7700', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_10', type: 'accommodation', name: 'Cape Town Seaside Villas', price: 200, rating: 4.8,
+            location: 'Cape Town, South Africa', travelerTypes: ['family','couple'],
+            images: ['https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Luxury villas with ocean views.',
+            address: 'Camps Bay, Cape Town', contact: '+27 21 123 4567', map: 'https://maps.google.com'
+        },
+        {
+            id: 'lst_11', type: 'cafe', name: 'Dubai Desert Café', price: 12, rating: 4.5,
+            location: 'Dubai, UAE', travelerTypes: ['solo','couple'],
+            images: ['https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop'],
+            description: 'Coffee and dates in a desert-themed lounge.',
+            address: 'Downtown Dubai', contact: '+971 4 123 4567', map: 'https://maps.google.com'
+        },
     ];
 
     const trending = [
@@ -984,5 +1041,6 @@ window.addEventListener('hashchange', () => {
     if (location.hash==="#/community") renderCommunity();
     if (location.hash==="#/destination") wireDestinationUtilities();
 });
+
 
 
