@@ -55,14 +55,14 @@ function seedData() {
         },
         {
             id: 'lst_2', type: 'cafe', name: 'Roast & Coast Cafe', price: 8, rating: 4.3,
-            location: 'Lisbon, Portugal', travelerTypes: ['solo','couple'],
+            location: 'Goa, India', travelerTypes: ['solo','couple'],
             images: ['https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop'],
             description: 'Specialty coffee with ocean views and pastel de nata.',
             address: 'Alfama, Lisbon', contact: '+351 000 000 000', map: 'https://maps.google.com'
         },
         {
             id: 'lst_3', type: 'attraction', name: 'Skyline Gardens', price: 25, rating: 4.7,
-            location: 'Singapore', travelerTypes: ['family','couple'],
+            location: 'Goa, India', travelerTypes: ['family','couple'],
             images: ['https://images.unsplash.com/photo-1549877452-9c387954fbc0?q=80&w=1200&auto=format&fit=crop'],
             description: 'Iconic supertree grove with light shows and skywalks.',
             address: '18 Marina Gardens Dr', contact: '+65 0000 0000', map: 'https://maps.google.com'
@@ -70,28 +70,28 @@ function seedData() {
         // --- Extra demo items from popular cities ---
         {
             id: 'lst_4', type: 'accommodation', name: 'Paris Central Hotel', price: 150, rating: 4.6,
-            location: 'Paris, France', travelerTypes: ['couple','solo'],
+            location: 'Goa, India', travelerTypes: ['couple','solo'],
             images: ['https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop'],
             description: 'Chic rooms near the Eiffel Tower.',
             address: '14 Rue de Paris', contact: '+33 1 2345 6789', map: 'https://maps.google.com'
         },
         {
             id: 'lst_5', type: 'cafe', name: 'Tokyo Brew House', price: 10, rating: 4.4,
-            location: 'Tokyo, Japan', travelerTypes: ['solo','couple'],
+            location: 'Goa, India', travelerTypes: ['solo','couple'],
             images: ['https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop'],
             description: 'Trendy specialty coffee and matcha cafe.',
             address: 'Shibuya, Tokyo', contact: '+81 3 1234 5678', map: 'https://maps.google.com'
         },
         {
             id: 'lst_6', type: 'attraction', name: 'Sydney Opera House', price: 35, rating: 4.8,
-            location: 'Sydney, Australia', travelerTypes: ['family','couple', 'solo'],
+            location: 'Goa, India', travelerTypes: ['family','couple', 'solo'],
             images: ['https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1200&auto=format&fit=crop'],
             description: 'World-famous music and arts venue.',
             address: 'Bennelong Point, Sydney', contact: '+61 2 9250 7111', map: 'https://maps.google.com'
         },
         {
             id: 'lst_7', type: 'accommodation', name: 'New York Loft Stay', price: 180, rating: 4.2,
-            location: 'New York, USA', travelerTypes: ['solo','family'],
+            location: 'Goa, India', travelerTypes: ['solo','family'],
             images: ['https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop'],
             description: 'Modern loft apartments in Manhattan.',
             address: '5th Avenue, NY', contact: '+1 212 555 6789', map: 'https://maps.google.com'
@@ -1041,6 +1041,7 @@ window.addEventListener('hashchange', () => {
     if (location.hash==="#/community") renderCommunity();
     if (location.hash==="#/destination") wireDestinationUtilities();
 });
+
 
 
 
