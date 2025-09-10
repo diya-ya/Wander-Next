@@ -215,6 +215,21 @@ function enhance(root) {
     });
 }
 
+// Global delegation to ensure actions always work (e.g., header buttons)
+(function initGlobalDelegation(){
+    if (window.__wn_global_delegate_attached) return;
+    window.__wn_global_delegate_attached = true;
+    document.addEventListener('click', (e) => {
+        const el = e.target && (e.target.closest ? e.target.closest('[data-action]') : null);
+        if (!el) return;
+        const action = el.getAttribute('data-action');
+        if (action && typeof Actions[action] === 'function') {
+            e.preventDefault();
+            Actions[action](el, e);
+        }
+    }, true);
+})();
+
 function renderAuthArea() {
     const area = document.getElementById('authArea');
     const user = Auth.current();
