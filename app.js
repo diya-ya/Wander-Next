@@ -50,13 +50,6 @@ function seedData() {
             address: '123 Beach Rd, Goa', contact: '+91 00000 00000', map: 'https://maps.google.com'
         },
         {
-            id: 'lst_2', type: 'accommodation', name: 'Azure Bay Hotel', price: 120, rating: 4.5,
-            location: 'Goa, India', travelerTypes: ['couple','family'],
-            images: ['https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200&auto=format&fit=crop'],
-            description: 'Seaside hotel with infinity pool and private beach access.',
-            address: '123 Beach Rd, Goa', contact: '+91 00000 00000', map: 'https://maps.google.com'
-        },
-        {
             id: 'lst_3', type: 'accommodation', name: 'Goa Palms Resort', price: 90, rating: 4.2,
             location: 'Goa, India', travelerTypes: ['solo','family'],
             images: ['https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop'],
