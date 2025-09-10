@@ -246,7 +246,11 @@ const Actions = {
         const data = Object.fromEntries(new FormData(form).entries());
         const mode = new URLSearchParams(location.hash.split('?')[1]||'').get('mode') || 'login';
         if (mode === 'login') {
-            Auth.loginEmail(data.email, data.password);
+            const email = (data.email || '').trim();
+            const password = (data.password || '').trim();
+            if (!email) { toast('Email is required'); form.querySelector('input[name=email]')?.focus(); return; }
+            if (!password) { toast('Password is required'); form.querySelector('input[name=password]')?.focus(); return; }
+            Auth.loginEmail(email, password);
         } else {
             const validation = validatePassword(data.password);
             if (!validation.valid) { 
