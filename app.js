@@ -190,6 +190,9 @@ const Router = {
         view.innerHTML = handler();
         enhance(view);
         renderAuthArea();
+        if (path === '#/community') renderCommunity();
+        if (path === '#/destination') wireDestinationUtilities();
+        if (path === '#/results') mountResultsPage();
     }
 };
 
