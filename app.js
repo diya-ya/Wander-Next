@@ -37,6 +37,16 @@ function toast(message) {
     setTimeout(() => node.remove(), 2500);
 }
 
+// Destination query helpers
+function sanitizeDestinationQuery(q){
+    // (Deprecated behavior) Previously stripped invalid characters; keep for reference but unused
+    return (q || '').trim();
+}
+function isValidDestinationQuery(q){
+    if (!q) return false;
+    return /\p{L}/u.test(q) && /^[\p{L} \-.,']+$/u.test(q);
+}
+
 function setYear() { document.getElementById('year').textContent = new Date().getFullYear(); }
 
 // ------------------------------ Seed Data ------------------------------
@@ -269,7 +279,7 @@ const Actions = {
     },
     searchDestinations(btn) {
         const q = (btn.closest('form').querySelector('input[name=q]')?.value || '').trim();
-        if (!q) return toast('Please enter a destination to search');
+        if (!isValidDestinationQuery(q)) return toast('Enter a valid destination (letters only)');
         Router.go(`#/results?query=${encodeURIComponent(q)}`);
     },
     applyListingFilters() { renderListings(); },
@@ -533,13 +543,15 @@ Router.register('#/profile', () => {
 // Results page matching requested layout
 Router.register('#/results', () => {
     const params = new URLSearchParams(location.hash.split('?')[1]||'');
-    const q = (params.get('query') || '').trim();
+    const raw = (params.get('query') || '').trim();
+    const isValid = isValidDestinationQuery(raw);
+    const q = raw;
     return `
     <section class="card">
         <div class="content">
             <div class="section-title">
-                <h2>${q || 'Results'}</h2>
-                <span class="muted">${countResults(q)} results</span>
+                <h2>${isValid ? (q || 'Results') : 'Invalid query'}</h2>
+                <span class="muted">${isValid ? countResults(q) : 0} results</span>
             </div>
             <div class="tabs">
                 <div class="tab active" data-tab="accommodation">Accommodations</div>
@@ -565,12 +577,13 @@ Router.register('#/results', () => {
         </div>
     </section>
 
-    <section class="card"><div class="content"><div id="resultsMount"></div></div></section>
+    <section class="card"><div class="content"><div id="resultsMount">${isValid ? '' : '<div class="empty">Please enter a valid destination name (letters only).</div>'}</div></div></section>
     `;
 });
 
 function countResults(q){
-    const query = (q||'').trim().toLowerCase();
+    if (!isValidDestinationQuery(q)) return 0;
+    const query = (q||'').toLowerCase();
     return getState().data.listings.filter(l => l.location.toLowerCase().includes(query)).length;
 }
 
@@ -675,6 +688,7 @@ function mountResultsPage(){
     const q = (params.get('query') || '').trim();
     const mount = document.getElementById('resultsMount');
     if (!mount) return;
+    if (!isValidDestinationQuery(q)) { mount.innerHTML = '<div class="empty">Please enter a valid destination name (letters only).</div>'; return; }
     const all = getState().data.listings.filter(l => l.location.toLowerCase().includes(q.toLowerCase()));
 
     window.resultsBase = all;
