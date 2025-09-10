@@ -59,7 +59,7 @@ function seedData() {
         {
             id: 'lst_4', type: 'accommodation', name: 'Sunset Beach Villas', price: 200, rating: 4.8,
             location: 'Goa, India', travelerTypes: ['couple'],
-            images: ['https://images.unsplash.com/photo-1519821172141-b5d8636c73a6?q=80&w=1200&auto=format&fit=crop'],
+            images: ['https://images.unsplash.com/photo-1554718627-19b43b14304a?w=600&auto=format&fit=crop'],
             description: 'Luxury villas with private beach and ocean views.',
             address: 'Sunset Blvd, Goa', contact: '+91 33333 44444', map: 'https://maps.google.com'
         },
@@ -76,7 +76,7 @@ function seedData() {
         {
             id: 'lst_6', type: 'cafe', name: 'Goa Spice Kitchen', price: 15, rating: 4.6,
             location: 'Goa, India', travelerTypes: ['family','couple'],
-            images: ['https://images.unsplash.com/photo-1464306076886-debede18a857?q=80&w=1200&auto=format&fit=crop'],
+            images: ['https://plus.unsplash.com/premium_photo-1731953243145-438393a396da?q=80&w=1170&auto=format&fit=crop'],
             description: 'Authentic Goan cuisine and seafood specialties.',
             address: 'Spice Street, Goa', contact: '+91 77777 88888', map: 'https://maps.google.com'
         },
@@ -92,7 +92,7 @@ function seedData() {
         {
             id: 'lst_8', type: 'attraction', name: 'Fort Aguada', price: 20, rating: 4.7,
             location: 'Goa, India', travelerTypes: ['family','couple','solo'],
-            images: ['https://images.unsplash.com/photo-1549877452-9c387954fbc0?q=80&w=1200&auto=format&fit=crop'],
+            images: ['https://plus.unsplash.com/premium_photo-1694475547624-f7ad4d8a1b70?w=600&auto=format&fit=crop'],
             description: 'Historic fort with panoramic views of the Arabian Sea.',
             address: 'Aguada Fort, Goa', contact: '+91 22222 33333', map: 'https://maps.google.com'
         },
@@ -135,7 +135,7 @@ function seedData() {
 
     const trending = [
         { id: 'tr_1', title: "Santorini Sunsets", image: 'https://images.unsplash.com/photo-1669203408570-4140ee21f211?q=80&w=1935&auto=format&fit=crop' },
-        { id: 'tr_2', title: "Kyoto Temples", image: 'https://images.unsplash.com/photo-1500315331616-db1a23f40e96?q=80&w=1200&auto=format&fit=crop' },
+        { id: 'tr_2', title: "Kyoto Temples", image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1170&auto=format&fit=crop' },
         { id: 'tr_3', title: "Iceland Ring Road", image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop' },
     ];
 
