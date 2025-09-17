@@ -21,6 +21,7 @@ const Store = {
                 likes: {},
             },
             data: seedData(),
+            ui: { seenWelcome: false },
         };
     },
 };
@@ -190,7 +191,10 @@ const Router = {
     go(hash) { location.hash = hash; },
     start() {
         window.addEventListener('hashchange', this.render.bind(this));
-        if (!location.hash) location.hash = '#/';
+        if (!location.hash) {
+            const seenWelcome = getState().ui?.seenWelcome;
+            location.hash = seenWelcome ? '#/' : '#/welcome';
+        }
         this.render();
     },
     render() {
@@ -244,7 +248,6 @@ function renderAuthArea() {
         `;
     } else {
         area.innerHTML = `
-            <a href="#/community" class="btn ghost" data-link>Community</a>
             <button class="btn ghost" data-action="openLogin">Login</button>
             <button class="btn primary" data-action="openRegister">Sign up</button>
         `;
@@ -259,6 +262,12 @@ const Actions = {
     openProfile() { Router.go('#/profile'); },
     gotoDashboard() { Router.go('#/dashboard'); },
     logout() { Auth.logout(); },
+    startPlanning() {
+        setState(s => { s.ui.seenWelcome = true; });
+        Router.go('#/');
+        // Fallback in case hashchange doesn't fire as expected
+        Router.render();
+    },
     saveProfile(btn) {
         const form = btn.closest('form');
         const data = Object.fromEntries(new FormData(form).entries());
@@ -1106,6 +1115,22 @@ Router.register('#/dashboard', () => {
                 return `<div class="list-item card"><img class="img" style="height:100px" src="${l.images?.[0]}"/><div class="content"><strong>${l.name}</strong><div class="muted">${i.dest}</div><div class="muted">Saved: ${new Date(i.date).toLocaleString()}</div></div></div>`;
             }).join('') : '<div class="empty">No items in itinerary.</div>'}
         </div></div>
+    </section>
+    `;
+});
+
+Router.register('#/welcome', () => {
+    return `
+    <section class="card panel" style="min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:linear-gradient(180deg,#f7fcff 0%,#ecf8ff 60%,#e6fff8 100%)">
+        <div style="max-width:920px">
+            <h1 style="font-size:46px; line-height:1.15; margin:10px 0">Plan every trip with confidence</h1>
+            <p class="muted" style="max-width:720px; margin:0 auto 28px auto; font-size:18px">
+                Discover destinations, compare stays and eats, and build a beautiful itinerary — all in one place.
+            </p>
+            <div class="row" style="justify-content:center; gap:12px; margin-top:10px">
+                <button class="btn primary" style="padding:16px 22px; font-size:16px" data-action="startPlanning">Start planning</button>
+            </div>
+        </div>
     </section>
     `;
 });
