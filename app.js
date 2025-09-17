@@ -1123,7 +1123,7 @@ Router.register('#/welcome', () => {
     return `
     <section class="card panel" style="min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:linear-gradient(180deg,#f7fcff 0%,#ecf8ff 60%,#e6fff8 100%)">
         <div style="max-width:920px">
-            <h1 style="font-size:46px; line-height:1.15; margin:10px 0">Plan every trip with confidence</h1>
+            <h1 style="font-size:46px; line-height:1.15; margin:10px 0">Plan your trips your way</h1>
             <p class="muted" style="max-width:720px; margin:0 auto 28px auto; font-size:18px">
                 Discover destinations, compare stays and eats, and build a beautiful itinerary — all in one place.
             </p>
